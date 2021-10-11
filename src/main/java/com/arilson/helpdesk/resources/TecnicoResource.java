@@ -1,6 +1,6 @@
 package com.arilson.helpdesk.resources;
 
-import com.arilson.helpdesk.domain.enums.Tecnico;
+import com.arilson.helpdesk.domain.Tecnico;
 import com.arilson.helpdesk.services.TecnicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

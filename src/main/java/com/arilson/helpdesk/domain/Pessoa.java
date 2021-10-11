@@ -1,5 +1,6 @@
-package com.arilson.helpdesk.domain.enums;
+package com.arilson.helpdesk.domain;
 
+import com.arilson.helpdesk.domain.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;

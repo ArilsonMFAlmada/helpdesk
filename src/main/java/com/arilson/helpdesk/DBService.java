@@ -1,5 +1,6 @@
 package com.arilson.helpdesk;
 
+import com.arilson.helpdesk.domain.*;
 import com.arilson.helpdesk.domain.enums.*;
 import com.arilson.helpdesk.repositories.ChamadoRepository;
 import com.arilson.helpdesk.repositories.ClienteRepository;
