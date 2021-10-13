@@ -18,5 +18,4 @@ public class RessourceExceptionHandler {
                 "Object Not Found", ex.getMessage(), request.getRequestURI());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
-
 }
