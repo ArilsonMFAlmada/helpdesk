@@ -23,6 +23,7 @@ public class TecnicoResource {
     @GetMapping(value = "/{id}")
     public ResponseEntity<TecnicoDTO> findById(@PathVariable Integer id) {
         Tecnico obj = service.findById(id);
+
         return ResponseEntity.ok().body(new TecnicoDTO(obj));
     }
 
@@ -30,6 +31,7 @@ public class TecnicoResource {
     public ResponseEntity<List<TecnicoDTO>> findAll() {
         List<Tecnico> list = service.findAll();
         List<TecnicoDTO> listDTO = list.stream().map(obj -> new TecnicoDTO(obj)).collect(Collectors.toList());
+
         return ResponseEntity.ok().body(listDTO);
     }
 
@@ -37,12 +39,20 @@ public class TecnicoResource {
     public ResponseEntity<TecnicoDTO> create(@Valid @RequestBody TecnicoDTO objDTO){
         Tecnico newObj = service.create(objDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
+
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<TecnicoDTO> update(@PathVariable Integer id, @Valid @RequestBody TecnicoDTO objDTO) {
         Tecnico obj = service.update(id, objDTO);
+
         return ResponseEntity.ok().body(new TecnicoDTO(obj));
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<TecnicoDTO> delete(@PathVariable Integer id) {
+        service.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
