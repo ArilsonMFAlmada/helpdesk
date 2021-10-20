@@ -8,6 +8,7 @@ import com.arilson.helpdesk.domain.enums.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -21,16 +22,22 @@ public class ChamadoDTO implements Serializable {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataFechamento;
 
+    @NotNull(message = "O campo PRIORIDADE é requirido")
     private Integer prioridade;
 
+    @NotNull(message = "O campo STATUS é requirido")
     private Integer status;
 
+    @NotNull(message = "O campo TÍTULO é requirido")
     private String titulo;
 
+    @NotNull(message = "O campo OBSERVAÇÔES é requirido")
     private String observacoes;
 
+    @NotNull(message = "O campo TECNICO é requirido")
     private Integer tecnico;
 
+    @NotNull(message = "O campo CLIENTE é requirido")
     private Integer cliente;
 
     private String nomeTecnico;
